@@ -13,9 +13,9 @@ It has been revisited and refined for learning and portfolio purposes.
 ---
 
 ## 🌍 Live Demo
-👉 https://bookifanlublou.netlify.app/
+👉 https://ohmyfoodjacquesdev.netlify.app/
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/34b4acde-a747-4167-b3a6-1279e6dbd4bc/deploy-status)](https://app.netlify.com/sites/bookifanlublou/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c7688b26-96e6-4b55-bd81-80561ff8f706/deploy-status)](https://app.netlify.com/projects/ohmyfoodjacquesdev/deploys)
 
 
 ---
