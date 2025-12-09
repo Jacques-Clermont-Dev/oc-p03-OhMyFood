@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Je recopie la balise head de index.html et je change le titre -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- j'adapte le chemin d'accès -->
+     <link rel="stylesheet" href="../assets/style/style.css"> 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <!-- Ajout des fonts Roboto et Shrikhand -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
+     <!-- Ajout du kit Font Awesome pour les icônes -->
+     <script src="https://kit.fontawesome.com/06cf8953cf.js" crossorigin="anonymous"></script>
+     <title>Menu_La-palette-du-gout</title>
+</head>
+<body>
+    <!-- Ici, je copie colle les premières lignes d'index.html -->
+    <div class="main-wrapper">
+        <header class="headerwrapper">
+            <div class="headerwrapper__logo">
+                <a href="../index.html">
+                    <i class="fa-solid fa-arrow-left fa-xl"></i>
+                </a>
+                <!-- J'adapte le chemin d'accès -->
+                <a href="../index.html">
+                    <img src="../assets/images/logo/ohmyfood.png" alt="logo ohmyfood">
+                </a>    
+            </div>
+        </header>
+        <main class="main-menu">
+            <img src="../assets/images/restaurants/Picture1.jpg" alt="Plat dressé dans un restaurant">
+            <div class="menu">
+                <section class="menu__title">
+                    <h1>La palette du goût</h1>
+                    <div class="heart">
+                        <input type="checkbox" id="activation1">         
+                        <label for="activation1">
+                            <i class="fa-solid fa-heart full"></i>
+                            <i class="fa-regular fa-heart empty"></i>
+                        </label>                            
+                    </div>   
+                </section>
+                <section class="menu__dishes">
+                    <!-- N'a plus d'utilité -->
+                    <!-- <div class="menu__dishes__title"></div> -->
+                        <h3>ENTRÉES</h3>
+                        <!-- l'article a un but sémantique et le h2 sera pas affiché -->
+                        <article>
+                            <h2>Article</h2>                        
+                            <input type="checkbox" id="activation2">
+                            <label for="activation2">
+                                <span class="menu__starter1__card">
+                                    <span class="menu__starter1__card__textAndPrice">
+                                        <span class="menu__starter1__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Fricassée d'escargots</span>                                        
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Au piment d'Espelette</span>
+                                        </span>
+                                        <span class="menu__starter1__card__textAndPrice__price">
+                                            25€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__starter1__card__selectButton">
+                                        <span class="menu__starter1__card__selectButton__outline">
+                                            <span class="menu__starter1__card__selectButton__outline__circle">
+                                                <span class="menu__starter1__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>
+                        <!-- l'article a un but sémantique et le h2 ne sera pas affiché -->
+                        <article>
+                            <h2>Article</h2>                                                  
+                            <input type="checkbox" id="activation3">
+                            <label for="activation3">
+                                <span class="menu__starter2__card">
+                                    <span class="menu__starter2__card__textAndPrice">
+                                        <span class="menu__starter2__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Foie gras de canard mi-cuit</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Et ses copeaux de truffe noire</span>
+                                        </span>
+                                        <span class="menu__starter2__card__textAndPrice__price">
+                                            35€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__starter2__card__selectButton">
+                                        <span class="menu__starter2__card__selectButton__outline">
+                                            <span class="menu__starter2__card__selectButton__outline__circle">
+                                                <span class="menu__starter2__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>
+                    <article>
+                        <h2>Article</h2>                                                                    
+                        <input type="checkbox" id="activation4">
+                        <label for="activation4">
+                            <span class="menu__starter3__card">
+                                <span class="menu__starter3__card__textAndPrice">
+                                    <span class="menu__starter3__card__textAndPrice__text">
+                                        <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Oeuf au plat</span>
+                                        <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Assaisonné à la truffe sur lit de caviar</span>
+                                    </span>
+                                    <span class="menu__starter3__card__textAndPrice__price">
+                                        20€
+                                    </span>
+                                </span>                                              
+                                <span class="menu__starter3__card__selectButton">
+                                    <span class="menu__starter3__card__selectButton__outline">
+                                        <span class="menu__starter3__card__selectButton__outline__circle">
+                                            <span class="menu__starter3__card__selectButton__outline__circle__conteneur-i">
+                                                <i class="fa-solid fa-check"></i>
+                                            </span>            
+                                        </span>
+                                    </span>   
+                                </span>
+                            </span>
+                        </label>
+                    </article>                                                                 
+                </section>
+                <section class="menu__dishes">
+                    <!-- N'a plus d'utilités -->
+                    <!-- <div class="menu__dishes__title"></div> -->
+                        <h3>PLATS</h3>
+                        <article>
+                            <h2>Article</h2>                        
+                            <input type="checkbox" id="activation6">
+                            <label for="activation6">
+                                <span class="menu__dish1__card">
+                                    <span class="menu__dish1__card__textAndPrice">
+                                        <span class="menu__dish1__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Filet de boeuf aux herbes</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Accompagné de sa ribambelle de légumes</span>
+                                        </span>
+                                        <span class="menu__dish1__card__textAndPrice__price">
+                                            35€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dish1__card__selectButton">
+                                        <span class="menu__dish1__card__selectButton__outline">
+                                            <span class="menu__dish1__card__selectButton__outline__circle">
+                                                <span class="menu__dish1__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>
+                        <article>
+                            <h2>Article</h2>                                                 
+                            <input type="checkbox" id="activation7">
+                            <label for="activation7">
+                                <span class="menu__dish2__card">
+                                    <span class="menu__dish2__card__textAndPrice">
+                                        <span class="menu__dish2__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Parmentier de queue de boeuf</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">À la truffe noire sur sa purée de panais</span>
+                                        </span>
+                                        <span class="menu__dish2__card__textAndPrice__price">
+                                            35€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dish2__card__selectButton">
+                                        <span class="menu__dish2__card__selectButton__outline">
+                                            <span class="menu__dish2__card__selectButton__outline__circle">
+                                                <span class="menu__dish2__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>
+                        <article>
+                            <h2>Article</h2>                                                      
+                            <input type="checkbox" id="activation8">
+                            <label for="activation8">
+                                <span class="menu__dish3__card">
+                                    <span class="menu__dish3__card__textAndPrice">
+                                        <span class="menu__dish3__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Filet de turbot</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Auxagrumes</span>
+                                        </span>
+                                        <span class="menu__dish3__card__textAndPrice__price">
+                                            44€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dish3__card__selectButton">
+                                        <span class="menu__dish3__card__selectButton__outline">
+                                            <span class="menu__dish3__card__selectButton__outline__circle">
+                                                <span class="menu__dish3__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>                           
+                </section>
+                <section class="menu__dishes">
+                    <!-- N'a plus d'utilités -->
+                    <!-- <div class="menu__dishes__title"></div> -->
+                        <h3>DESSERTS</h3>
+                        <article>
+                            <h2>Article</h2>
+                        
+                            <input type="checkbox" id="activation9">
+                            <label for="activation9">
+                                <span class="menu__dessert1__card">
+                                    <span class="menu__dessert1__card__textAndPrice">
+                                        <span class="menu__dessert1__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Paris-Brest</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Revisité</span>
+                                        </span>
+                                        <span class="menu__dessert1__card__textAndPrice__price">
+                                            18€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dessert1__card__selectButton">
+                                        <span class="menu__dessert1__card__selectButton__outline">
+                                            <span class="menu__dessert1__card__selectButton__outline__circle">
+                                                <span class="menu__dessert1__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>
+                        <article>
+                            <h2>Article</h2>                                                    
+                            <input type="checkbox" id="activation10">
+                            <label for="activation10">
+                                <span class="menu__dessert2__card">
+                                    <span class="menu__dessert2__card__textAndPrice">
+                                        <span class="menu__dessert2__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Macaron au chocolat d'exception</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Et glace à la vanille de Madagascar</span>
+                                        </span>
+                                        <span class="menu__dessert2__card__textAndPrice__price">
+                                            22€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dessert2__card__selectButton">
+                                        <span class="menu__dessert2__card__selectButton__outline">
+                                            <span class="menu__dessert2__card__selectButton__outline__circle">
+                                                <span class="menu__dessert2__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span> 
+                            </label>
+                        </article>
+                        <article>
+                            <h2>Article</h2>                                                   
+                            <input type="checkbox" id="activation11">
+                            <label for="activation11">
+                                <span class="menu__dessert3__card">
+                                    <span class="menu__dessert3__card__textAndPrice">
+                                        <span class="menu__dessert3__card__textAndPrice__text">
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-h2">Mousse au chocolat</span>
+                                            <span class="menu__starter1__card__textAndPrice__text__equivalent-p">Au piment d'Espelette et à la truffe noire</span>
+                                        </span>
+                                        <span class="menu__dessert3__card__textAndPrice__price">
+                                            23€
+                                        </span>
+                                    </span>                                              
+                                    <span class="menu__dessert3__card__selectButton">
+                                        <span class="menu__dessert3__card__selectButton__outline">
+                                            <span class="menu__dessert3__card__selectButton__outline__circle">
+                                                <span class="menu__dessert3__card__selectButton__outline__circle__conteneur-i">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </span>            
+                                            </span>
+                                        </span>   
+                                    </span>
+                                </span>
+                            </label>
+                        </article>                           
+                </section>
+                <a class="restaurant-exploration__btn" href="#">Commander</a>
+            </div>
+        </main>
+        <!-- j'ajoute une classe ici au footer pour pouvoir le remonter de 50px sinon les footers sont identiques -->
+        <footer class="height-adaptation">
+            <div class="container-footer">
+                <h2>ohmyfood</h2>
+                <div class="container-footer__footer-content">                
+                    <div class="container-footer__footer-content__alignment">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>Proposer un restaurant</p>                    
+                    </div>
+                    <div class="container-footer__footer-content__alignment">
+                        <i class="fa-solid fa-handshake-angle fa-xs"></i>
+                        <p>Devenir partenaire </p>                    
+                    </div>
+                    <p>Mentions légales</p>                   
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

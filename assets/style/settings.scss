@@ -1,0 +1,502 @@
+
+/* design system */
+:root {
+    --primary-color: #9356DC;
+    --secondary-color: #FF79DA;
+    --Tertiary-color: #99E2D0;
+    --bg-grey-1: #f6f6f6;
+    --bg-grey-2: #EAEAEA;
+    --ft-grey-3: #353535;
+    --elt-grey-4: #7E7E7E;
+    --green: #99E2D0;
+    --green-font: #008766;
+
+
+}
+
+h1, h2, h3, h4, p, body {
+    margin: 0;
+  }
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.125rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Utilise la couleur du texte parent */
+}
+
+// J'empêche ici l'affichage par défaut du navigateur
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    // -ms-appearance: none;
+}
+
+
+
+// Je créé une mixin ici pour la carte menu
+
+@mixin menu-card{
+    width: 60%;
+    gap:12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @media (max-width: 1440px) {
+        width: 93%;
+        #activation2:checked ~ label {
+            .menu__starter1__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }  
+            .menu__starter1__card__selectButton__outline__circle__conteneur-i {           
+                    
+                justify-content:center;
+                }
+            .menu__starter1__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__starter1__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }    
+        }
+        #activation3:checked ~ label {
+            .menu__starter2__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__starter2__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__starter2__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__starter2__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }       
+        }
+        #activation4:checked ~ label {
+            .menu__starter3__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__starter3__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__starter3__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__starter3__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }        
+        }
+        #activation5:checked ~ label {
+            .menu__starter4__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__starter4__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__starter4__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__starter4__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }        
+        }
+        #activation6:checked ~ label {
+            .menu__dish1__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__dish1__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__dish1__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__dish1__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }    
+        }
+        #activation7:checked ~ label {
+            .menu__dish2__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__dish2__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__dish2__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__dish2__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }        
+        }
+        #activation8:checked ~ label {
+            .menu__dish3__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__dish3__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__dish3__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__dish3__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }        
+        }
+        #activation9:checked ~ label {
+            .menu__dessert1__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__dessert1__card__selectButton__outline__circle__conteneur-i {           
+                
+                justify-content:center;
+                }
+            .menu__dessert1__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__dessert1__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }               
+        }
+        #activation10:checked ~ label {
+            .menu__dessert2__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                } 
+            .menu__dessert2__card__selectButton__outline__circle__conteneur-i {           
+        
+            justify-content:center;
+            }
+            .menu__dessert2__card__selectButton__outline__circle i {
+
+            width: auto;
+            }
+            .menu__dessert2__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }  
+        }
+        #activation11:checked ~ label {
+            .menu__dessert3__card__selectButton {
+                    opacity: 1;
+                    width: 59px;                                                        
+                }
+            .menu__dessert3__card__selectButton__outline__circle__conteneur-i {           
+            
+                justify-content:center;
+                }
+            .menu__dessert3__card__selectButton__outline__circle i {
+
+                width: auto;
+            }
+            .menu__dessert3__card__selectButton__outline__circle {
+                opacity: 1;
+                width: 30px;
+            }   
+        }
+    }         
+    &__card {
+        width:100%;
+        border-radius: 15px;
+        background-color: white;
+        // je retire le padding à droite pour que mon selected button colle à la droite de la carte
+        // Plus bas, j'ajouterai un padding right à l'élément price pour avoir le décalage
+        padding: 15px 0px 15px 15px;
+        height: 72px;
+        box-sizing: border-box;
+        // Sans box-sizing, on aurait height à 42px
+        box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px rgba(0, 0, 0, 0.10);
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        will-change: transform;
+        
+        // J'utilise l'animation fadeIn déclarée plus bas (J'instancie l'animation)
+        // Ici, le but est de faire apparaître les plats les uns après les autres
+        //le mot clé « forwards » prolonge les valeurs finales d'une animation jusqu'à ce que la page soit rechargée ou que le navigateur soit fermé,
+        // animation: fadeIn 0.6s ease-in-out forwards;
+
+        
+        
+        
+        &__textAndPrice{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding-right: 15px; 
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            
+            
+            
+            &__text{            
+                width: 88%;
+                display: flex;
+                flex-direction: column;
+                // les éléments flexibles sont contraints à être disposés sur une seule ligne                
+                flex-wrap: nowrap;
+                // // on force ici le texte à rester sur une seule ligne
+                white-space: nowrap;
+                
+              
+                
+                
+                &__equivalent-h2{
+                    //Je remets ici les infos du h2
+                    margin: 0;
+                    font-size: 1.125rem;                    
+                    font-weight: 500;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    
+
+                    
+                }
+                &__equivalent-p{
+                    //Je remets ici les infos du p
+                    margin: 0;
+                    font-size: 1.125rem;                    
+                    font-size: 15px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;    
+                }
+            }
+            &__price{
+                height: 50%;
+                font-weight: bold;
+                font-weight: 500;
+                // je préfère mettre un padding right à l'élément price pour ne pas avoir à en mettre sur l'élément parent card
+                // Ainsi quand le selected button apparait, il se juxtapose bien avec l'élément parent                
+                                                   
+                }
+        }
+        &__selectButton{
+            
+            opacity: 0;
+            width: 0px;
+            transition:ease-out 0.25s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            height: 100%;            
+            padding: 15px 0px; 
+            background-color: var(--green);
+                    
+            &__outline{                
+                &__circle{
+                    
+                    width: 30px;
+                    opacity: 0;
+                    width: 0px;
+                    height: 30px;
+                    border-radius: 15px;
+                    border: 2px solid white;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    &__conteneur-i{
+                        display: flex;
+                        text-align: center;
+                        justify-content:right;
+                        width: 100%;                          
+                        i {    
+                            width: 0px;                      
+                            margin: 50px;
+                            text-align: center;
+                            color: var(--green);
+                            font-size: 1rem;                            
+                        }
+                    }    
+                }    
+            }      
+        
+            
+            
+        }
+        @media (min-width: 1440px) {
+            // Combinateur d'adjacence - Partie III du cours sur les animations CSS
+            &:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i,
+            &:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i
+                {           
+                    
+                    justify-content:center;
+                }
+        }
+        @media (min-width: 1440px) {
+            // Combinateur d'adjacence - Partie III du cours sur les animations CSS
+            &:hover .menu__starter1__card__selectButton__outline__circle i,
+            &:hover .menu__starter2__card__selectButton__outline__circle i,
+            &:hover .menu__starter3__card__selectButton__outline__circle i,
+            &:hover .menu__starter4__card__selectButton__outline__circle i,
+            &:hover .menu__dish1__card__selectButton__outline__circle i,
+            &:hover .menu__dish2__card__selectButton__outline__circle i,
+            &:hover .menu__dish3__card__selectButton__outline__circle i,
+            &:hover .menu__dessert1__card__selectButton__outline__circle i,
+            &:hover .menu__dessert2__card__selectButton__outline__circle i,
+            &:hover .menu__dessert3__card__selectButton__outline__circle i
+                {           
+                    
+                    width: auto;
+                }
+        }
+
+
+        @media (min-width: 1440px) {
+            // Combinateur d'adjacence - Partie III du cours sur les animations CSS
+            &:hover .menu__starter1__card__selectButton__outline__circle,
+            &:hover .menu__starter2__card__selectButton__outline__circle,
+            &:hover .menu__starter3__card__selectButton__outline__circle,
+            &:hover .menu__starter4__card__selectButton__outline__circle,
+            &:hover .menu__dish1__card__selectButton__outline__circle,
+            &:hover .menu__dish2__card__selectButton__outline__circle,
+            &:hover .menu__dish3__card__selectButton__outline__circle,
+            &:hover .menu__dessert1__card__selectButton__outline__circle,
+            &:hover .menu__dessert2__card__selectButton__outline__circle,
+            &:hover .menu__dessert3__card__selectButton__outline__circle
+                {           
+                    opacity: 1;
+                    width: 30px;
+                    
+                }
+        }
+        @media (min-width: 1440px) {
+            // Combinateur d'adjacence - Partie III du cours sur les animations CSS
+       
+
+            &:hover .menu__starter1__card__selectButton,
+            &:hover .menu__starter2__card__selectButton,
+            &:hover .menu__starter3__card__selectButton,
+            &:hover .menu__starter4__card__selectButton,
+            &:hover .menu__dish1__card__selectButton,
+            &:hover .menu__dish2__card__selectButton,
+            &:hover .menu__dish3__card__selectButton,
+            &:hover .menu__dessert1__card__selectButton,
+            &:hover .menu__dessert2__card__selectButton,
+            &:hover .menu__dessert3__card__selectButton
+                {   
+                    // margin-right: 0px;        
+                    opacity: 1; 
+                    width: 59px;
+                    
+                }
+        }         
+        
+    }      
+                  
+}
+
+
+.menu__starter1__card{
+    animation: fadeIn 0.2s ease-in-out;
+    
+}
+.menu__starter2__card{
+    animation: fadeIn 0.4s ease-in-out;
+    
+}
+.menu__starter3__card{
+    animation: fadeIn 0.6s ease-in-out;
+    
+}
+.menu__starter4__card{
+    animation: fadeIn 0.8s ease-in-out;
+    
+}
+.menu__dish1__card{
+    animation: fadeIn 1.0s ease-in-out;
+    
+}
+.menu__dish2__card{
+    animation: fadeIn 1.2s ease-in-out;
+    
+}
+.menu__dish3__card{
+    animation: fadeIn 1.4s ease-in-out;
+    
+}
+.menu__dessert1__card{
+    animation: fadeIn 1.6s ease-in-out;
+    
+}
+.menu__dessert2__card{
+    animation: fadeIn 1.8s ease-in-out;
+    
+}
+.menu__dessert3__card{
+    animation: fadeIn 2.0s ease-in-out;
+    
+}
+
+// je déclare ici une animation de fondu (fadeIn)
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(10px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}

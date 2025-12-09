@@ -1,0 +1,501 @@
+
+/////////////////////////////// loader ////////////////////////
+.loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    pointer-events: none;
+    animation: 0.2s linear 2s loading;
+    animation-fill-mode: forwards; /* empecher la boucle */
+  }
+  
+  @keyframes loading {
+    from {
+      opacity: 100%;
+    }
+  
+    to {
+      opacity: 0;
+    }  }
+  
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    background-color: var(--secondary-color);
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    background-color: var(--Tertiary-color);
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    background-color: var(--primary-color);
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    background-color: var(--secondary-color);
+  
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
+
+
+.main-wrapper {
+    // width: 375px;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+}
+
+.headerwrapper {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    &__logo {
+        display: flex;    
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 63px;
+        //Pour que la flêche apparaisse à gauche à 17px du bord tout en laissant le logo bien centré
+        position: relative;
+        a i {
+            position: absolute;
+            left: 17px;
+        }
+        img {
+            /* je fixe la largeur, j'aurais pu fixer la hauteur */
+            width: 197px;
+        }
+    }
+    &__location {
+        display: flex;
+        background-color: var(--bg-grey-2);
+        // inset modifie l'ombre afin qu'elle soit tournée vers l'intérieur du cadre (comme si le contenu était enfoncé dans la boîte)
+        box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 17px;
+        // je décalle artificiellement l'ensemble pour que l'icone de localisation soit en dessous de l'espace entre le O et le h
+        padding-left: 40px;
+        .location-lookfor {
+            background-color: transparent;
+            border: none;
+            font-family: "Roboto";
+            color: var(--ft-grey-3);
+            font-size: 1rem;            
+        }
+    }
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+// Pour les menus
+main img {
+    height: 275px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.restaurant-exploration {
+    width: 100%;
+    height: 287px;
+    background-color: var(--bg-grey-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    &__title {
+        width: 275px;
+        height: 68px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 39px;
+        margin-left: 12%;
+        margin-right: 15.4%;
+        // Equivalents en px pour une vw de 375px
+        // margin-left: 42px;
+        // margin-right: 58px;
+        margin-bottom: 0px;
+        @media (min-width: 1440px){
+            width: 645px;
+            height: 47px;
+        }       
+       
+    }
+
+    &__subtitle {
+        width: 315px;
+        height: 46px;
+        margin-left: 9%;
+        margin-right: 7%;
+        text-align: center;
+        h2{
+            font-weight: lighter;
+        }
+        @media (min-width: 1024px){
+            width: 531px;
+            
+        }   
+    }
+    &__btn {
+        border-radius: 25px;
+        width: 218px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(175deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        margin-top: 27px;
+        margin-left: 1%;
+        // margin-left: 3.5px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        transition: background-color 0.3s ease-out, background-color 0.3s ease-out;
+
+        &:hover {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(182deg, #9356DC 0%, #FF79DA 100%);
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        }
+    }
+} 
+.operation {
+    height: 440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    box-sizing: border-box;
+        @media (min-width: 1440px) {
+        // justify-content: center;
+        height: 229px;
+    
+    }
+    &__main-container{
+        box-sizing: border-box;
+        width: 375px;
+        padding: 48px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (min-width: 1440px) {
+            width: 100%;
+            padding: 50px 180px;
+            align-items: center;
+        }    
+        h1{
+            margin-bottom: 26px;
+        }
+        &__container{
+            @media (min-width: 1440px) {
+                display: flex;
+                flex-direction: row;
+                gap: 24px;
+            }
+            &__element{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 25px;
+                width: 322px;
+                height: 72px;
+                background-color: var(--bg-grey-1);
+                box-sizing: border-box;
+                padding-top: 28.59px;
+                padding-bottom: 28.12px;
+                // margin-left: 210.98px;
+                margin-bottom: 24.94px;
+                
+                i {
+                    color: var(--elt-grey-4);
+                    margin-right: 27px;
+                    margin-left: 21.98px;
+                    
+                    
+                }
+                
+                // <!-- ici, j'utilise un id pour colorer uniquement l'icône store -->
+                // <!-- un inline style m'aurait paru plus simple mais pour ce projet,  -->
+                // <!-- nous avons convenu avec le mentor que nous evitererions cette solution -->
+                            
+                #purple {
+                    color: #9356DC;
+                }
+                &__circle{
+                    border-radius: 24px;
+                    width: 24px;
+                    height: 24px;
+                    background-color: var(--primary-color);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: -12px;
+                }
+    
+        }
+        
+        }    
+
+    }
+    
+}
+.restaurants-visualisation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 48px 17px;
+    background-color: var(--bg-grey-1);
+    align-items: center;
+    margin-left: auto;
+    
+    &__main-container{
+        h1{
+            margin-top: 6px;
+            margin-left: 3px;
+        }
+        &__container{
+            display: flex;
+            flex-direction: column;
+            @media (min-width: 1440px){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 50px;
+                column-gap: 100px;
+            }
+            &__card{
+                margin-top: 18px;
+                background-color: white;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                width: 346px;
+                height: 308px;
+                position: relative;
+                i {
+                    position : absolute;
+                    bottom: 33px;
+                    right: 25px;
+                    font-size: 22px;                                                                                   
+                }
+                .full{
+                    background-image: linear-gradient(175deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    visibility: hidden;                              
+                    }
+                .empty {
+                    visibility: visible;
+                }
+                #activation1:checked ~ label {
+                    .empty {
+                        visibility: hidden;                  
+                    }
+
+                    .full{            
+                        visibility: visible;
+                    }
+                }    
+                #activation2:checked ~ label {
+                    .empty {
+                        visibility: hidden;                  
+                    }
+
+                    .full{            
+                        visibility: visible;
+                    }
+                }    
+                #activation3:checked ~ label {
+                    .empty {
+                        visibility: hidden;                  
+                    }
+
+                    .full{            
+                        visibility: visible;
+                    }
+                }    
+                #activation4:checked ~ label {
+                    .empty {
+                        visibility: hidden;                  
+                    }
+
+                    .full{            
+                        visibility: visible;
+                    }
+                }    
+                
+                @media (min-width: 1440px) {
+                    width: 490px;
+                }
+                
+
+                
+                img {
+                    width: 100%;
+                    height: 231px;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    // contain marchait sauf pour la deuxième photo, j'opte finalement pour la valeur cover
+                    object-fit: cover;
+                    margin-bottom: 16px;
+                }
+                h2 {
+                    margin-bottom: 5px;
+                }
+                h2, p {
+                    margin-left: 13px;
+                }
+                &__info {
+                    position: absolute;
+                    border-radius: 2px;
+                    background-color: var(--green);
+                    font-weight: bold;
+                    color: var(--green-font);
+                    width: 80px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: 12px;
+                    right: 12px;
+                }
+             
+                             
+        }
+
+    }
+    
+    
+    }
+}
+footer {
+    // margin-top: -50px;
+    // width: 375px;
+    width: 100%;
+    height: 186px;
+    background-color: var(--ft-grey-3);
+    box-sizing: border-box;
+    padding: 22px 25px;
+    color: white;
+    @media (min-width: 1440px){
+        display: flex;
+        align-items:end;
+        justify-content: flex-end;
+    }
+    h2{
+        font-family: shrinkand;
+        font-style: italic;
+        margin-bottom: 16px;
+    }
+    @media (min-width: 1440px){
+        width: 100%;
+        padding: 30px 25px;
+    }
+
+
+.container-footer{
+    @media (min-width: 1440px){
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 16px;
+          
+    }
+    &__footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        @media (min-width: 1440px) {
+            flex-direction: row;
+           
+        }
+
+        &__alignment{
+            display: flex;
+            flex-direction: row;
+            // justify-content: flex-start;
+            align-items: baseline;
+            i {
+                margin-right: 10px;
+            }    
+        }
+}
+
+
+}    
+
+
+}

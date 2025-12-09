@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Ajout des fonts Roboto et Shrikhand -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
+    <!-- Ajout du kit Font Awesome pour les icônes -->
+    <script src="https://kit.fontawesome.com/06cf8953cf.js" crossorigin="anonymous"></script>
+    <title>ohmyfood</title>
+</head>
+<body>
+      <!-- Loading -->
+      <div class="loading">
+        <div class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      
+    <div class="main-wrapper">
+        <header class="headerwrapper">
+            <div class="headerwrapper__logo">
+                <img src="./assets/images/logo/ohmyfood.png" alt="logo ohmyfood">
+            </div>
+            <div class="headerwrapper__location">
+                <div>   
+                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                </div>    
+                <input class="location-lookfor" type="search" placeholder="Paris, Belleville">
+            </div>         
+        </header>
+        <main>
+            <section class="restaurant-exploration">
+                <div class="restaurant-exploration__title">
+                    <h1>Réservez le menu qui vous convient</h1>
+                </div>
+                <div class="restaurant-exploration__subtitle">
+                    <h2>Découvrez des restaurants d’exception, sélectionnés par nos soins.</h2>
+                </div>                               
+                <a class="restaurant-exploration__btn" href="#">Explorer nos restaurants</a>                
+            </section>
+            <section class="operation">
+                <div class="operation__main-container">
+                    <h1>Fonctionnement</h1>
+                    <div class="operation__main-container__container">
+                        <div class="operation__main-container__container__element">
+                            <span class="operation__main-container__container__element__circle">
+                                1
+                            </span>
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <p>Choississez un restaurant</p>
+                        </div>
+                        <div class="operation__main-container__container__element">
+                            <span class="operation__main-container__container__element__circle">
+                                2
+                            </span>
+                            <i class="fa-solid fa-list"></i>
+                            <p>Composez votre menu</p>
+                        </div>
+                        <div class="operation__main-container__container__element">
+                            <span class="operation__main-container__container__element__circle">
+                                3
+                            </span>
+                            <!-- ici, j'utilise un id pour colorer uniquement l'icône store -->
+                            <!-- un inline style m'aurait paru plus simple mais pour ce projet,  -->
+                            <!-- nous avons convenu avec le mentor que nous evitererions cette solution -->
+                            <i class="fa-solid fa-store" id="purple"></i>
+                            <p>Dégustez au restaurant</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="restaurants-visualisation">
+                <div class="restaurants-visualisation__main-container">
+                    <h1>Restaurants</h1>
+                    <div class="restaurants-visualisation__main-container__container">                        
+                        <article class="restaurants-visualisation__main-container__container__card">
+                            <a href="./restaurants/Menu_La-palette-du-gout.html">    
+                                <span class="restaurants-visualisation__main-container__container__card__info">Nouveau</span>
+                                <img src="././assets/images/restaurants/Picture1.jpg" alt="Plat dressé dans un restaurant">
+                                <h2>La palette du goût</h2>
+                                <p>Ménilmontant</p>
+                            </a>
+                            <input type="checkbox" id="activation1">         
+                            <label for="activation1">
+                                <i class="fa-solid fa-heart full"></i>
+                                <i class="fa-regular fa-heart empty"></i>
+                            </label>                                                                                           
+                        </article>
+                           
+                        <article class="restaurants-visualisation__main-container__container__card">                            
+                            <a href="./restaurants/Menu_La-note-enchantée.html">    
+                                <span class="restaurants-visualisation__main-container__container__card__info">Nouveau</span>
+                                <img src="././assets/images/restaurants/Picture2.jpg" alt="Plat dressé dans un restaurant">
+                                <h2 >La note enchantée</h2>
+                                <p>Charonne</p>
+                            </a>    
+                            <input type="checkbox" id="activation2">         
+                            <label for="activation2">
+                                <i class="fa-solid fa-heart full"></i>
+                                <i class="fa-regular fa-heart empty"></i>
+                            </label>                                                      
+                        </article>
+                        <article class="restaurants-visualisation__main-container__container__card">                           
+                            <a href="./restaurants/Menu_A-la-francaise.html">
+                                <img src="././assets/images/restaurants/Picture3.jpg" alt="Plat dressé dans un restaurant">
+                                <h2>À la française</h2>
+                                <p>Cité Rouge</p>
+                            </a>    
+                            <input type="checkbox" id="activation3">         
+                            <label for="activation3">
+                                <i class="fa-solid fa-heart full"></i>
+                                <i class="fa-regular fa-heart empty"></i>
+                            </label>     
+                        </article>
+                        
+                        <article class="restaurants-visualisation__main-container__container__card">                            
+                            <a href="./restaurants/Menu_Le-delice-des-sens.html">
+                                <img src="././assets/images/restaurants/Picture4.jpg" alt="Plat dressé dans un restaurant">
+                                <h2>Le délice des sens</h2>
+                                <p>Folie-Méricourt</p>
+                            </a>
+                            <input type="checkbox" id="activation4">         
+                            <label for="activation4">
+                                <i class="fa-solid fa-heart full"></i>
+                                <i class="fa-regular fa-heart empty"></i>
+                            </label>                                            
+                        </article>                        
+                    </div>
+                </div>    
+            </section>
+        </main>
+        <footer>
+            <div class="container-footer">
+                <h2>ohmyfood</h2>
+                <div class="container-footer__footer-content">                
+                    <div class="container-footer__footer-content__alignment">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>Proposer un restaurant</p>                    
+                    </div>
+                    <div class="container-footer__footer-content__alignment">
+                        <i class="fa-solid fa-handshake-angle fa-xs"></i>
+                        <p>Devenir partenaire </p>                    
+                    </div>
+                    <p>Mentions légales</p>                   
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+</body>
+</html>

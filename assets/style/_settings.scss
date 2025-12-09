@@ -1,0 +1,618 @@
+/* #region 1. DESIGN SYSTEM & GLOBAL VARIABLES */
+/* design system */
+:root {
+  --primary-color: #9356dc;
+  --secondary-color: #ff79da;
+  --Tertiary-color: #99e2d0;
+  --bg-grey-1: #f6f6f6;
+  --bg-grey-2: #eaeaea;
+  --ft-grey-3: #353535;
+  --elt-grey-4: #7e7e7e;
+  --green: #99e2d0;
+  --green-font: #008766;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+body {
+  margin: 0px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Utilise la couleur du texte parent */
+}
+
+// J'empêche ici l'affichage par défaut du navigateur
+// on reviendra sur cette partie dans quelques instants avec la rotation de l'icône
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  // -ms-appearance: none;
+  border: none;
+  background: none;
+}
+
+/* #endregion 1 */
+
+/* #region 2. MENU CARD MIXIN & LAYOUT */
+// Je créé une mixin ici pour la carte menu
+
+@mixin menu-card {
+  // La propriété CSS align-items: center; aligne verticaliement les éléments contenus dans une flexbox par rapport à leur centre
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: center;
+  margin-left: 3%;
+  margin-right: 4%;
+  width: 93%;
+  height: 69px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px 0px #0000001a;
+  .main-menu__choice__circle {
+    background-color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 12px;
+      color: white;
+    }
+  }
+  .main-menu__choice__icon {
+    color: var(--elt-grey-4);
+    padding-left: 4px;
+    padding-right: 7%;
+    width: 13px;
+  }
+  .main-menu__choice__icon .fa-list-ul {
+    font-size: 14px;
+  }
+  .main-menu__choice__icontemplate .fa-mobile-screen-button {
+    font-size: 18px;
+  }
+  .main-menu__choice__discription {
+    width: 100%;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.main-menu__choice--new-mixins {
+  @include menu-card;
+  p {
+    color: var(--elt-grey-4);
+  }
+}
+
+.main-menu__choice--template-mixins {
+  @include menu-card;
+  @media (min-width: 1024px) {
+    .main-menu__choice__icontemplate {
+      padding-right: 13%;
+      width: 13px;
+    }
+  }
+
+  .main-menu__choice__discription {
+    width: 100%;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      // c'est sur cet élément p que je choisis d'appliquer la transparence
+      opacity: 0.5;
+    }
+  }
+}
+
+.main-menu__choice--list-mixins {
+  @include menu-card;
+  .main-menu__choice__discription {
+    width: 100%;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: var(--elt-grey-4);
+    }
+  }
+  @media (min-width: 1024px) {
+    .main-menu__choice__icon {
+      padding-right: 10%;
+      width: 13px;
+    }
+  }
+}
+
+.main-menu__choice--store-mixins {
+  @include menu-card;
+  .main-menu__choice__discription {
+    width: 100%;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: var(--elt-grey-4);
+    }
+  }
+  @media (min-width: 1024px) {
+    .main-menu__choice__icon {
+      padding-right: 9%;
+      width: 13px;
+      color: var(--elt-grey-4);
+    }
+  }
+}
+
+/* CSS GRID pour le positionnement */
+.restaurants-visualisation__main-container__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 18px;
+}
+
+.restaurants-visualisation__main-container__box {
+  &__card {
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    // max-width: 335px;
+    box-shadow: 0px 4px 15px 0px #0000001a;
+    position: relative;
+    // margin-bottom: 20px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    img {
+      width: 100%;
+      height: 174px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      // contain marchait sauf pour la deuxième photo, j'opte finalement pour la valeur cover
+      object-fit: cover;
+      margin-bottom: 16px;
+    }
+    h2 {
+      margin-bottom: 5px;
+    }
+    h2,
+    p {
+      margin-left: 13px;
+    }
+    &__info {
+      position: absolute;
+      border-radius: 2px;
+      background-color: var(--green);
+      font-weight: bold;
+      color: var(--green-font);
+      width: 80px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 12px;
+      right: 12px;
+    }
+  }
+}
+
+.restaurants-visualisation__main-container__box {
+  &__card {
+    &__like {
+      // display: flex;
+      position: absolute;
+      // justify-content: flex-end;
+      // align-items: center;
+      right: 25px;
+      bottom: 30px;
+      width: 22px;
+      height: 21px;
+    }
+  }
+}
+
+// classe spéciale pour rendre le coeur vide transparent tant qu'il n'est pas activé
+.like-heart__empty {
+  opacity: 1;
+}
+
+// Les cases à cocher sont cachées pour qu'on ne les voit pas. on va plutôt voir l'icône (coeur vide) à la place
+//de la case à cocher
+input[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+}
+
+#activation1:checked ~ label {
+  .like-heart {
+    .like-heart__empty {
+      opacity: 0;
+    }
+    .like-heart__full {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+  }
+}
+// Combinateur d'adjacence - Partie III du cours sur les animations CSS
+#activation1:not(:checked) ~ label {
+  /* Quand input n'est pas checké, l'image pleine est cachée */
+  .like-heart {
+    .like-heart__empty {
+      opacity: 1;
+      transition: opacity 1.3s ease-in-out;
+    }
+
+    .like-heart__full {
+      opacity: 0;
+    }
+  }
+}
+
+//  Pour ce menu, j'utilise une version simplifiée de la technique
+//  d'activation/deactivation de différents coeurs que j'avais faîtes pour l'accueil
+
+#activation2:checked ~ label {
+  .like-heart-2 {
+    .like-heart__empty {
+      opacity: 0;
+    }
+    .like-heart__full {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+// Combinateur d'adjacence - Partie III du cours sur les animations CSS
+#activation2:not(:checked) ~ label {
+  /* Quand input n'est pas checké, l'image pleine est cachée */
+  .like-heart-2 {
+    .like-heart__empty {
+      opacity: 1;
+      transition: opacity 2s ease-out;
+    }
+
+    .like-heart__full {
+      opacity: 0;
+    }
+  }
+}
+
+#activation3:checked ~ label {
+  .menu__starter1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation3:not(:checked) ~ label {
+  .menu__starter1__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__starter1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__starter1__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__starter1__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation4:checked ~ label {
+  .menu__starter2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation4:not(:checked) ~ label {
+  .menu__starter2__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__starter2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__starter2__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__starter2__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+// Combinateur d'adjacence - Partie III du cours sur les animations CSS
+#activation5:checked ~ label {
+  .menu__starter3__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter3__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter3__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation5:not(:checked) ~ label {
+  .menu__starter3__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__starter3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__starter3__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__starter3__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation6:checked ~ label {
+  .menu__starter4__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter4__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter4__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter4__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation6:not(:checked) ~ label {
+  .menu__starter4__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__starter4__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__starter4__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__starter4__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation7:checked ~ label {
+  .menu__dish1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__dish1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__dish1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__dish1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation7:not(:checked) ~ label {
+  .menu__dish1__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__dish1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__dish1__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__dish1__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation8:checked ~ label {
+  .menu__dish2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__dish2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__dish2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__dish2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation8:not(:checked) ~ label {
+  .menu__dish2__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__dish2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__dish2__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__dish2__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation9:checked ~ label {
+  .menu__dessert1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__dessert1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__dessert1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__dessert1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation9:not(:checked) ~ label {
+  .menu__dessert1__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__dessert1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__dessert1__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__dessert1__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+#activation10:checked ~ label {
+  .menu__dessert2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__dessert2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__dessert2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__dessert2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+#activation10:not(:checked) ~ label {
+  .menu__dessert2__card__selectButton {
+    opacity: 0;
+    width: 0px;
+  }
+  .menu__dessert2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: flex-end;
+  }
+  .menu__dessert2__card__selectButton__outline__circle i {
+    width: 0px;
+  }
+  .menu__dessert2__card__selectButton__outline__circle {
+    opacity: 0;
+    width: 0px;
+  }
+}
+
+/* #endregion 2 */
+
+/* #region 3. ANIMATIONS */
+// je déclare ici une animation de fondu (fadeIn)
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* #endregion 3 */

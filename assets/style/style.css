@@ -1,0 +1,909 @@
+/* design system */
+:root {
+  --primary-color: #9356DC;
+  --secondary-color: #FF79DA;
+  --Tertiary-color: #99E2D0;
+  --bg-grey-1: #f6f6f6;
+  --bg-grey-2: #EAEAEA;
+  --ft-grey-3: #353535;
+  --elt-grey-4: #7E7E7E;
+  --green: #99E2D0;
+  --green-font: #008766;
+}
+
+h1, h2, h3, h4, p, body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Utilise la couleur du texte parent */
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.menu__starter1__card {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.menu__starter2__card {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.menu__starter3__card {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.menu__starter4__card {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.menu__dish1__card {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.menu__dish2__card {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.menu__dish3__card {
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+.menu__dessert1__card {
+  animation: fadeIn 1.6s ease-in-out;
+}
+
+.menu__dessert2__card {
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+.menu__dessert3__card {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgb(252, 252, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  pointer-events: none;
+  animation: 0.2s linear 2s loading;
+  animation-fill-mode: forwards; /* empecher la boucle */
+}
+
+@keyframes loading {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  background-color: var(--secondary-color);
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  background-color: var(--Tertiary-color);
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  background-color: var(--primary-color);
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  background-color: var(--secondary-color);
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+.main-wrapper {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.headerwrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.headerwrapper__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 63px;
+  position: relative;
+}
+.headerwrapper__logo a i {
+  position: absolute;
+  left: 17px;
+}
+.headerwrapper__logo img {
+  /* je fixe la largeur, j'aurais pu fixer la hauteur */
+  width: 197px;
+}
+.headerwrapper__location {
+  display: flex;
+  background-color: var(--bg-grey-2);
+  box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  padding-left: 40px;
+}
+.headerwrapper__location .location-lookfor {
+  background-color: transparent;
+  border: none;
+  font-family: "Roboto";
+  color: var(--ft-grey-3);
+  font-size: 1rem;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+main img {
+  height: 275px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.restaurant-exploration {
+  width: 100%;
+  height: 287px;
+  background-color: var(--bg-grey-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.restaurant-exploration__title {
+  width: 275px;
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 39px;
+  margin-left: 12%;
+  margin-right: 15.4%;
+  margin-bottom: 0px;
+}
+@media (min-width: 1440px) {
+  .restaurant-exploration__title {
+    width: 645px;
+    height: 47px;
+  }
+}
+.restaurant-exploration__subtitle {
+  width: 315px;
+  height: 46px;
+  margin-left: 9%;
+  margin-right: 7%;
+  text-align: center;
+}
+.restaurant-exploration__subtitle h2 {
+  font-weight: lighter;
+}
+@media (min-width: 1024px) {
+  .restaurant-exploration__subtitle {
+    width: 531px;
+  }
+}
+.restaurant-exploration__btn {
+  border-radius: 25px;
+  width: 218px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(175deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  margin-top: 27px;
+  margin-left: 1%;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-out, background-color 0.3s ease-out;
+}
+.restaurant-exploration__btn:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(182deg, #9356DC 0%, #FF79DA 100%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.operation {
+  height: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+@media (min-width: 1440px) {
+  .operation {
+    height: 229px;
+  }
+}
+.operation__main-container {
+  box-sizing: border-box;
+  width: 375px;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (min-width: 1440px) {
+  .operation__main-container {
+    width: 100%;
+    padding: 50px 180px;
+    align-items: center;
+  }
+}
+.operation__main-container h1 {
+  margin-bottom: 26px;
+}
+@media (min-width: 1440px) {
+  .operation__main-container__container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+.operation__main-container__container__element {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25px;
+  width: 322px;
+  height: 72px;
+  background-color: var(--bg-grey-1);
+  box-sizing: border-box;
+  padding-top: 28.59px;
+  padding-bottom: 28.12px;
+  margin-bottom: 24.94px;
+}
+.operation__main-container__container__element i {
+  color: var(--elt-grey-4);
+  margin-right: 27px;
+  margin-left: 21.98px;
+}
+.operation__main-container__container__element #purple {
+  color: #9356DC;
+}
+.operation__main-container__container__element__circle {
+  border-radius: 24px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -12px;
+}
+
+.restaurants-visualisation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 48px 17px;
+  background-color: var(--bg-grey-1);
+  align-items: center;
+  margin-left: auto;
+}
+.restaurants-visualisation__main-container h1 {
+  margin-top: 6px;
+  margin-left: 3px;
+}
+.restaurants-visualisation__main-container__container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1440px) {
+  .restaurants-visualisation__main-container__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+    column-gap: 100px;
+  }
+}
+.restaurants-visualisation__main-container__container__card {
+  margin-top: 18px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 346px;
+  height: 308px;
+  position: relative;
+}
+.restaurants-visualisation__main-container__container__card i {
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
+  font-size: 22px;
+}
+.restaurants-visualisation__main-container__container__card .full {
+  background-image: linear-gradient(175deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+}
+.restaurants-visualisation__main-container__container__card .empty {
+  visibility: visible;
+}
+.restaurants-visualisation__main-container__container__card #activation1:checked ~ label .empty {
+  visibility: hidden;
+}
+.restaurants-visualisation__main-container__container__card #activation1:checked ~ label .full {
+  visibility: visible;
+}
+.restaurants-visualisation__main-container__container__card #activation2:checked ~ label .empty {
+  visibility: hidden;
+}
+.restaurants-visualisation__main-container__container__card #activation2:checked ~ label .full {
+  visibility: visible;
+}
+.restaurants-visualisation__main-container__container__card #activation3:checked ~ label .empty {
+  visibility: hidden;
+}
+.restaurants-visualisation__main-container__container__card #activation3:checked ~ label .full {
+  visibility: visible;
+}
+.restaurants-visualisation__main-container__container__card #activation4:checked ~ label .empty {
+  visibility: hidden;
+}
+.restaurants-visualisation__main-container__container__card #activation4:checked ~ label .full {
+  visibility: visible;
+}
+@media (min-width: 1440px) {
+  .restaurants-visualisation__main-container__container__card {
+    width: 490px;
+  }
+}
+.restaurants-visualisation__main-container__container__card img {
+  width: 100%;
+  height: 231px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.restaurants-visualisation__main-container__container__card h2 {
+  margin-bottom: 5px;
+}
+.restaurants-visualisation__main-container__container__card h2, .restaurants-visualisation__main-container__container__card p {
+  margin-left: 13px;
+}
+.restaurants-visualisation__main-container__container__card__info {
+  position: absolute;
+  border-radius: 2px;
+  background-color: var(--green);
+  font-weight: bold;
+  color: var(--green-font);
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 12px;
+  right: 12px;
+}
+
+footer {
+  width: 100%;
+  height: 186px;
+  background-color: var(--ft-grey-3);
+  box-sizing: border-box;
+  padding: 22px 25px;
+  color: white;
+}
+@media (min-width: 1440px) {
+  footer {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+  }
+}
+footer h2 {
+  font-family: shrinkand;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+@media (min-width: 1440px) {
+  footer {
+    width: 100%;
+    padding: 30px 25px;
+  }
+}
+@media (min-width: 1440px) {
+  footer .container-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+  }
+}
+footer .container-footer__footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+@media (min-width: 1440px) {
+  footer .container-footer__footer-content {
+    flex-direction: row;
+  }
+}
+footer .container-footer__footer-content__alignment {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+footer .container-footer__footer-content__alignment i {
+  margin-right: 10px;
+}
+
+@media (min-width: 1440px) {
+  .main-menu img {
+    height: 383px;
+    object-position: 0 -370px;
+  }
+}
+
+.menu {
+  width: 93%;
+  position: relative;
+  top: -30px;
+  background-color: var(--bg-grey-1);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+@media (min-width: 1440px) {
+  .menu {
+    width: 73%;
+  }
+}
+.menu__title {
+  width: 93%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  align-items: baseline;
+  margin-top: 32px;
+  position: relative;
+}
+@media (min-width: 1440px) {
+  .menu__title {
+    justify-content: center;
+    gap: 24px;
+  }
+}
+.menu h1 {
+  font-style: italic;
+  font-size: 1.75rem;
+}
+.menu .fa-heart {
+  position: absolute;
+  right: 25px;
+  font-size: 22px;
+}
+@media (min-width: 1440px) {
+  .menu .fa-heart {
+    right: unset;
+  }
+}
+.menu .full {
+  background-image: linear-gradient(175deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+}
+.menu .empty {
+  visibility: visible;
+}
+.menu #activation1:checked ~ label .empty {
+  visibility: hidden;
+}
+.menu #activation1:checked ~ label .full {
+  visibility: visible;
+}
+.menu__starter1, .menu__starter2, .menu__starter3, .menu__starter4, .menu__dish1, .menu__dish2, .menu__dish3, .menu__dessert1, .menu__dessert2, .menu__dessert3, .menu__dishes {
+  width: 60%;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media (max-width: 1440px) {
+  .menu__starter1, .menu__starter2, .menu__starter3, .menu__starter4, .menu__dish1, .menu__dish2, .menu__dish3, .menu__dessert1, .menu__dessert2, .menu__dessert3, .menu__dishes {
+    width: 93%;
+  }
+  .menu__starter1 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__starter2 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__starter3 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__starter4 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dish1 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dish2 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dish3 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dessert1 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dessert2 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dessert3 #activation2:checked ~ label .menu__starter1__card__selectButton, .menu__dishes #activation2:checked ~ label .menu__starter1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__starter2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__starter3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__starter4 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dish1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dish2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dish3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dessert1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dessert2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dessert3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i, .menu__dishes #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__starter2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__starter3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__starter4 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dish1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dish2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dish3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dessert1 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dessert2 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dessert3 #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle, .menu__dishes #activation2:checked ~ label .menu__starter1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__starter2 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__starter3 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__starter4 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dish1 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dish2 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dish3 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dessert1 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dessert2 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dessert3 #activation3:checked ~ label .menu__starter2__card__selectButton, .menu__dishes #activation3:checked ~ label .menu__starter2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__starter2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__starter3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__starter4 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dish1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dish2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dish3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dessert1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dessert2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dessert3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i, .menu__dishes #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__starter2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__starter3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__starter4 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dish1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dish2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dish3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dessert1 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dessert2 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dessert3 #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle, .menu__dishes #activation3:checked ~ label .menu__starter2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__starter2 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__starter3 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__starter4 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dish1 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dish2 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dish3 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dessert1 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dessert2 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dessert3 #activation4:checked ~ label .menu__starter3__card__selectButton, .menu__dishes #activation4:checked ~ label .menu__starter3__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__starter2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__starter3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__starter4 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dish1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dish2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dish3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dessert1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dessert2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dessert3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i, .menu__dishes #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__starter2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__starter3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__starter4 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dish1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dish2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dish3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dessert1 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dessert2 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dessert3 #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle, .menu__dishes #activation4:checked ~ label .menu__starter3__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__starter2 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__starter3 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__starter4 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dish1 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dish2 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dish3 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dessert1 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dessert2 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dessert3 #activation5:checked ~ label .menu__starter4__card__selectButton, .menu__dishes #activation5:checked ~ label .menu__starter4__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__starter2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__starter3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__starter4 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dish1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dish2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dish3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dessert1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dessert2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dessert3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i, .menu__dishes #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__starter2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__starter3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__starter4 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dish1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dish2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dish3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dessert1 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dessert2 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dessert3 #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle, .menu__dishes #activation5:checked ~ label .menu__starter4__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__starter2 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__starter3 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__starter4 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dish1 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dish2 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dish3 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dessert1 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dessert2 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dessert3 #activation6:checked ~ label .menu__dish1__card__selectButton, .menu__dishes #activation6:checked ~ label .menu__dish1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__starter2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__starter3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__starter4 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dish1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dish2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dish3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dessert1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dessert2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dessert3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i, .menu__dishes #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__starter2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__starter3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__starter4 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dish1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dish2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dish3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dessert1 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dessert2 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dessert3 #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle, .menu__dishes #activation6:checked ~ label .menu__dish1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__starter2 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__starter3 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__starter4 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dish1 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dish2 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dish3 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dessert1 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dessert2 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dessert3 #activation7:checked ~ label .menu__dish2__card__selectButton, .menu__dishes #activation7:checked ~ label .menu__dish2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__starter2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__starter3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__starter4 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dish1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dish2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dish3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dessert1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dessert2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dessert3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i, .menu__dishes #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__starter2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__starter3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__starter4 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dish1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dish2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dish3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dessert1 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dessert2 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dessert3 #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle, .menu__dishes #activation7:checked ~ label .menu__dish2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__starter2 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__starter3 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__starter4 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dish1 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dish2 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dish3 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dessert1 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dessert2 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dessert3 #activation8:checked ~ label .menu__dish3__card__selectButton, .menu__dishes #activation8:checked ~ label .menu__dish3__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__starter2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__starter3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__starter4 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dish1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dish2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dish3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dessert1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dessert2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dessert3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i, .menu__dishes #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__starter2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__starter3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__starter4 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dish1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dish2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dish3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dessert1 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dessert2 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dessert3 #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle, .menu__dishes #activation8:checked ~ label .menu__dish3__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__starter2 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__starter3 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__starter4 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dish1 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dish2 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dish3 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dessert1 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dessert2 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dessert3 #activation9:checked ~ label .menu__dessert1__card__selectButton, .menu__dishes #activation9:checked ~ label .menu__dessert1__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__starter2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__starter3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__starter4 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dish1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dish2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dish3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i, .menu__dishes #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__starter2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__starter3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__starter4 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dish1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dish2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dish3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dessert1 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dessert2 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dessert3 #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle, .menu__dishes #activation9:checked ~ label .menu__dessert1__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__starter2 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__starter3 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__starter4 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dish1 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dish2 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dish3 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dessert1 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dessert2 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dessert3 #activation10:checked ~ label .menu__dessert2__card__selectButton, .menu__dishes #activation10:checked ~ label .menu__dessert2__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__starter2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__starter3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__starter4 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dish1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dish2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dish3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i, .menu__dishes #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__starter2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__starter3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__starter4 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dish1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dish2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dish3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dessert1 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dessert2 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dessert3 #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle, .menu__dishes #activation10:checked ~ label .menu__dessert2__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+  .menu__starter1 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__starter2 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__starter3 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__starter4 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dish1 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dish2 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dish3 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dessert1 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dessert2 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dessert3 #activation11:checked ~ label .menu__dessert3__card__selectButton, .menu__dishes #activation11:checked ~ label .menu__dessert3__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+  .menu__starter1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter4 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dishes #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+  .menu__starter1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__starter2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__starter3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__starter4 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dish1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dish2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dish3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i, .menu__dishes #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle i {
+    width: auto;
+  }
+  .menu__starter1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__starter2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__starter3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__starter4 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dish1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dish2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dish3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dessert1 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dessert2 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dessert3 #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle, .menu__dishes #activation11:checked ~ label .menu__dessert3__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+.menu__starter1__card, .menu__starter2__card, .menu__starter3__card, .menu__starter4__card, .menu__dish1__card, .menu__dish2__card, .menu__dish3__card, .menu__dessert1__card, .menu__dessert2__card, .menu__dessert3__card, .menu__dishes__card {
+  width: 100%;
+  border-radius: 15px;
+  background-color: white;
+  padding: 15px 0px 15px 15px;
+  height: 72px;
+  box-sizing: border-box;
+  box-shadow: 0px 4.0114941597px 15.0431032181px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  will-change: transform;
+}
+.menu__starter1__card__textAndPrice, .menu__starter2__card__textAndPrice, .menu__starter3__card__textAndPrice, .menu__starter4__card__textAndPrice, .menu__dish1__card__textAndPrice, .menu__dish2__card__textAndPrice, .menu__dish3__card__textAndPrice, .menu__dessert1__card__textAndPrice, .menu__dessert2__card__textAndPrice, .menu__dessert3__card__textAndPrice, .menu__dishes__card__textAndPrice {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-right: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__starter1__card__textAndPrice__text, .menu__starter2__card__textAndPrice__text, .menu__starter3__card__textAndPrice__text, .menu__starter4__card__textAndPrice__text, .menu__dish1__card__textAndPrice__text, .menu__dish2__card__textAndPrice__text, .menu__dish3__card__textAndPrice__text, .menu__dessert1__card__textAndPrice__text, .menu__dessert2__card__textAndPrice__text, .menu__dessert3__card__textAndPrice__text, .menu__dishes__card__textAndPrice__text {
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.menu__starter1__card__textAndPrice__text__equivalent-h2, .menu__starter2__card__textAndPrice__text__equivalent-h2, .menu__starter3__card__textAndPrice__text__equivalent-h2, .menu__starter4__card__textAndPrice__text__equivalent-h2, .menu__dish1__card__textAndPrice__text__equivalent-h2, .menu__dish2__card__textAndPrice__text__equivalent-h2, .menu__dish3__card__textAndPrice__text__equivalent-h2, .menu__dessert1__card__textAndPrice__text__equivalent-h2, .menu__dessert2__card__textAndPrice__text__equivalent-h2, .menu__dessert3__card__textAndPrice__text__equivalent-h2, .menu__dishes__card__textAndPrice__text__equivalent-h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__starter1__card__textAndPrice__text__equivalent-p, .menu__starter2__card__textAndPrice__text__equivalent-p, .menu__starter3__card__textAndPrice__text__equivalent-p, .menu__starter4__card__textAndPrice__text__equivalent-p, .menu__dish1__card__textAndPrice__text__equivalent-p, .menu__dish2__card__textAndPrice__text__equivalent-p, .menu__dish3__card__textAndPrice__text__equivalent-p, .menu__dessert1__card__textAndPrice__text__equivalent-p, .menu__dessert2__card__textAndPrice__text__equivalent-p, .menu__dessert3__card__textAndPrice__text__equivalent-p, .menu__dishes__card__textAndPrice__text__equivalent-p {
+  margin: 0;
+  font-size: 1.125rem;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__starter1__card__textAndPrice__price, .menu__starter2__card__textAndPrice__price, .menu__starter3__card__textAndPrice__price, .menu__starter4__card__textAndPrice__price, .menu__dish1__card__textAndPrice__price, .menu__dish2__card__textAndPrice__price, .menu__dish3__card__textAndPrice__price, .menu__dessert1__card__textAndPrice__price, .menu__dessert2__card__textAndPrice__price, .menu__dessert3__card__textAndPrice__price, .menu__dishes__card__textAndPrice__price {
+  height: 50%;
+  font-weight: bold;
+  font-weight: 500;
+}
+.menu__starter1__card__selectButton, .menu__starter2__card__selectButton, .menu__starter3__card__selectButton, .menu__starter4__card__selectButton, .menu__dish1__card__selectButton, .menu__dish2__card__selectButton, .menu__dish3__card__selectButton, .menu__dessert1__card__selectButton, .menu__dessert2__card__selectButton, .menu__dessert3__card__selectButton, .menu__dishes__card__selectButton {
+  opacity: 0;
+  width: 0px;
+  transition: ease-out 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 100%;
+  padding: 15px 0px;
+  background-color: var(--green);
+}
+.menu__starter1__card__selectButton__outline__circle, .menu__starter2__card__selectButton__outline__circle, .menu__starter3__card__selectButton__outline__circle, .menu__starter4__card__selectButton__outline__circle, .menu__dish1__card__selectButton__outline__circle, .menu__dish2__card__selectButton__outline__circle, .menu__dish3__card__selectButton__outline__circle, .menu__dessert1__card__selectButton__outline__circle, .menu__dessert2__card__selectButton__outline__circle, .menu__dessert3__card__selectButton__outline__circle, .menu__dishes__card__selectButton__outline__circle {
+  width: 30px;
+  opacity: 0;
+  width: 0px;
+  height: 30px;
+  border-radius: 15px;
+  border: 2px solid white;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card__selectButton__outline__circle__conteneur-i {
+  display: flex;
+  text-align: center;
+  justify-content: right;
+  width: 100%;
+}
+.menu__starter1__card__selectButton__outline__circle__conteneur-i i, .menu__starter2__card__selectButton__outline__circle__conteneur-i i, .menu__starter3__card__selectButton__outline__circle__conteneur-i i, .menu__starter4__card__selectButton__outline__circle__conteneur-i i, .menu__dish1__card__selectButton__outline__circle__conteneur-i i, .menu__dish2__card__selectButton__outline__circle__conteneur-i i, .menu__dish3__card__selectButton__outline__circle__conteneur-i i, .menu__dessert1__card__selectButton__outline__circle__conteneur-i i, .menu__dessert2__card__selectButton__outline__circle__conteneur-i i, .menu__dessert3__card__selectButton__outline__circle__conteneur-i i, .menu__dishes__card__selectButton__outline__circle__conteneur-i i {
+  width: 0px;
+  margin: 50px;
+  text-align: center;
+  color: var(--green);
+  font-size: 1rem;
+}
+@media (min-width: 1440px) {
+  .menu__starter1__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter1__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter2__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter3__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__starter4__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish1__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish2__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dish3__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert1__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert2__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dessert3__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__starter1__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__starter2__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__starter3__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__starter4__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dish1__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dish2__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dish3__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dessert1__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dessert2__card__selectButton__outline__circle__conteneur-i, .menu__dishes__card:hover .menu__dessert3__card__selectButton__outline__circle__conteneur-i {
+    justify-content: center;
+  }
+}
+@media (min-width: 1440px) {
+  .menu__starter1__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__starter1__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__starter2__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__starter3__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__starter4__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dish1__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dish2__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dish3__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert1__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert2__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dessert3__card:hover .menu__dessert3__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__starter1__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__starter2__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__starter3__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__starter4__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dish1__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dish2__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dish3__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dessert1__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dessert2__card__selectButton__outline__circle i, .menu__dishes__card:hover .menu__dessert3__card__selectButton__outline__circle i {
+    width: auto;
+  }
+}
+@media (min-width: 1440px) {
+  .menu__starter1__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__starter1__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__starter2__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__starter3__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__starter4__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dish1__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dish2__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dish3__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dessert1__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dessert2__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dessert3__card:hover .menu__dessert3__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__starter1__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__starter2__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__starter3__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__starter4__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dish1__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dish2__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dish3__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dessert1__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dessert2__card__selectButton__outline__circle, .menu__dishes__card:hover .menu__dessert3__card__selectButton__outline__circle {
+    opacity: 1;
+    width: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  .menu__starter1__card:hover .menu__starter1__card__selectButton, .menu__starter1__card:hover .menu__starter2__card__selectButton, .menu__starter1__card:hover .menu__starter3__card__selectButton, .menu__starter1__card:hover .menu__starter4__card__selectButton, .menu__starter1__card:hover .menu__dish1__card__selectButton, .menu__starter1__card:hover .menu__dish2__card__selectButton, .menu__starter1__card:hover .menu__dish3__card__selectButton, .menu__starter1__card:hover .menu__dessert1__card__selectButton, .menu__starter1__card:hover .menu__dessert2__card__selectButton, .menu__starter1__card:hover .menu__dessert3__card__selectButton, .menu__starter2__card:hover .menu__starter1__card__selectButton, .menu__starter2__card:hover .menu__starter2__card__selectButton, .menu__starter2__card:hover .menu__starter3__card__selectButton, .menu__starter2__card:hover .menu__starter4__card__selectButton, .menu__starter2__card:hover .menu__dish1__card__selectButton, .menu__starter2__card:hover .menu__dish2__card__selectButton, .menu__starter2__card:hover .menu__dish3__card__selectButton, .menu__starter2__card:hover .menu__dessert1__card__selectButton, .menu__starter2__card:hover .menu__dessert2__card__selectButton, .menu__starter2__card:hover .menu__dessert3__card__selectButton, .menu__starter3__card:hover .menu__starter1__card__selectButton, .menu__starter3__card:hover .menu__starter2__card__selectButton, .menu__starter3__card:hover .menu__starter3__card__selectButton, .menu__starter3__card:hover .menu__starter4__card__selectButton, .menu__starter3__card:hover .menu__dish1__card__selectButton, .menu__starter3__card:hover .menu__dish2__card__selectButton, .menu__starter3__card:hover .menu__dish3__card__selectButton, .menu__starter3__card:hover .menu__dessert1__card__selectButton, .menu__starter3__card:hover .menu__dessert2__card__selectButton, .menu__starter3__card:hover .menu__dessert3__card__selectButton, .menu__starter4__card:hover .menu__starter1__card__selectButton, .menu__starter4__card:hover .menu__starter2__card__selectButton, .menu__starter4__card:hover .menu__starter3__card__selectButton, .menu__starter4__card:hover .menu__starter4__card__selectButton, .menu__starter4__card:hover .menu__dish1__card__selectButton, .menu__starter4__card:hover .menu__dish2__card__selectButton, .menu__starter4__card:hover .menu__dish3__card__selectButton, .menu__starter4__card:hover .menu__dessert1__card__selectButton, .menu__starter4__card:hover .menu__dessert2__card__selectButton, .menu__starter4__card:hover .menu__dessert3__card__selectButton, .menu__dish1__card:hover .menu__starter1__card__selectButton, .menu__dish1__card:hover .menu__starter2__card__selectButton, .menu__dish1__card:hover .menu__starter3__card__selectButton, .menu__dish1__card:hover .menu__starter4__card__selectButton, .menu__dish1__card:hover .menu__dish1__card__selectButton, .menu__dish1__card:hover .menu__dish2__card__selectButton, .menu__dish1__card:hover .menu__dish3__card__selectButton, .menu__dish1__card:hover .menu__dessert1__card__selectButton, .menu__dish1__card:hover .menu__dessert2__card__selectButton, .menu__dish1__card:hover .menu__dessert3__card__selectButton, .menu__dish2__card:hover .menu__starter1__card__selectButton, .menu__dish2__card:hover .menu__starter2__card__selectButton, .menu__dish2__card:hover .menu__starter3__card__selectButton, .menu__dish2__card:hover .menu__starter4__card__selectButton, .menu__dish2__card:hover .menu__dish1__card__selectButton, .menu__dish2__card:hover .menu__dish2__card__selectButton, .menu__dish2__card:hover .menu__dish3__card__selectButton, .menu__dish2__card:hover .menu__dessert1__card__selectButton, .menu__dish2__card:hover .menu__dessert2__card__selectButton, .menu__dish2__card:hover .menu__dessert3__card__selectButton, .menu__dish3__card:hover .menu__starter1__card__selectButton, .menu__dish3__card:hover .menu__starter2__card__selectButton, .menu__dish3__card:hover .menu__starter3__card__selectButton, .menu__dish3__card:hover .menu__starter4__card__selectButton, .menu__dish3__card:hover .menu__dish1__card__selectButton, .menu__dish3__card:hover .menu__dish2__card__selectButton, .menu__dish3__card:hover .menu__dish3__card__selectButton, .menu__dish3__card:hover .menu__dessert1__card__selectButton, .menu__dish3__card:hover .menu__dessert2__card__selectButton, .menu__dish3__card:hover .menu__dessert3__card__selectButton, .menu__dessert1__card:hover .menu__starter1__card__selectButton, .menu__dessert1__card:hover .menu__starter2__card__selectButton, .menu__dessert1__card:hover .menu__starter3__card__selectButton, .menu__dessert1__card:hover .menu__starter4__card__selectButton, .menu__dessert1__card:hover .menu__dish1__card__selectButton, .menu__dessert1__card:hover .menu__dish2__card__selectButton, .menu__dessert1__card:hover .menu__dish3__card__selectButton, .menu__dessert1__card:hover .menu__dessert1__card__selectButton, .menu__dessert1__card:hover .menu__dessert2__card__selectButton, .menu__dessert1__card:hover .menu__dessert3__card__selectButton, .menu__dessert2__card:hover .menu__starter1__card__selectButton, .menu__dessert2__card:hover .menu__starter2__card__selectButton, .menu__dessert2__card:hover .menu__starter3__card__selectButton, .menu__dessert2__card:hover .menu__starter4__card__selectButton, .menu__dessert2__card:hover .menu__dish1__card__selectButton, .menu__dessert2__card:hover .menu__dish2__card__selectButton, .menu__dessert2__card:hover .menu__dish3__card__selectButton, .menu__dessert2__card:hover .menu__dessert1__card__selectButton, .menu__dessert2__card:hover .menu__dessert2__card__selectButton, .menu__dessert2__card:hover .menu__dessert3__card__selectButton, .menu__dessert3__card:hover .menu__starter1__card__selectButton, .menu__dessert3__card:hover .menu__starter2__card__selectButton, .menu__dessert3__card:hover .menu__starter3__card__selectButton, .menu__dessert3__card:hover .menu__starter4__card__selectButton, .menu__dessert3__card:hover .menu__dish1__card__selectButton, .menu__dessert3__card:hover .menu__dish2__card__selectButton, .menu__dessert3__card:hover .menu__dish3__card__selectButton, .menu__dessert3__card:hover .menu__dessert1__card__selectButton, .menu__dessert3__card:hover .menu__dessert2__card__selectButton, .menu__dessert3__card:hover .menu__dessert3__card__selectButton, .menu__dishes__card:hover .menu__starter1__card__selectButton, .menu__dishes__card:hover .menu__starter2__card__selectButton, .menu__dishes__card:hover .menu__starter3__card__selectButton, .menu__dishes__card:hover .menu__starter4__card__selectButton, .menu__dishes__card:hover .menu__dish1__card__selectButton, .menu__dishes__card:hover .menu__dish2__card__selectButton, .menu__dishes__card:hover .menu__dish3__card__selectButton, .menu__dishes__card:hover .menu__dessert1__card__selectButton, .menu__dishes__card:hover .menu__dessert2__card__selectButton, .menu__dishes__card:hover .menu__dessert3__card__selectButton {
+    opacity: 1;
+    width: 59px;
+  }
+}
+.menu__dishes article h2 {
+  display: none;
+}
+@media (min-width: 1440px) {
+  .menu__dishes {
+    width: 60%;
+  }
+}
+.menu h3 {
+  position: relative;
+  font-weight: 300;
+}
+.menu h3::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--green);
+}
+
+.height-adaptation {
+  margin-top: -30px;
+}
+
+/*# sourceMappingURL=style.css.map */
