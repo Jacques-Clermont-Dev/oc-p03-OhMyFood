@@ -91,7 +91,6 @@ The compiled output is stored in `style.css` for browser delivery.
 - **HTML5**
 - **Sass / SCSS**
 - **CSS Flex & Grid Layout**
-- **Vanilla JavaScript (minor interactions)**
 - **Font Awesome**
 - **Google Fonts**
 
